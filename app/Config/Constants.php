@@ -1,5 +1,6 @@
 <?php
 
+define("LAYOUT_URL","http://localhost:8080/common/static/css/");
 /*
  | --------------------------------------------------------------------
  | App Namespace

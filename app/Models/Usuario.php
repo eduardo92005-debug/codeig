@@ -4,10 +4,10 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Test extends Model
+class Usuario extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'tests';
+    protected $table            = 'usuarios';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
@@ -40,4 +40,13 @@ class Test extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
+    public function __construct()
+    {
+        $this->load->database();
+    }
+
+    public function getAllUsuarios(){
+        $result = $this->orderBy('USUARIO_ID', 'DESC')->findAll();
+        return $result;
+    }
 }
