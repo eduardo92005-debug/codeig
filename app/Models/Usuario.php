@@ -3,50 +3,42 @@
 namespace App\Models;
 
 use CodeIgniter\Model;
+use LDAP\Result;
 
 class Usuario extends Model
 {
     protected $DBGroup          = 'default';
     protected $table            = 'usuarios';
-    protected $primaryKey       = 'id';
+    protected $primaryKey       = 'usuario_id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = ['USUARIO_ID','LOGIN','SENHA', 'ATIVO', 'NOME_COMPLETO'];
 
-    // Dates
-    protected $useTimestamps = false;
-    protected $dateFormat    = 'datetime';
-    protected $createdField  = 'created_at';
-    protected $updatedField  = 'updated_at';
-    protected $deletedField  = 'deleted_at';
 
-    // Validation
-    protected $validationRules      = [];
-    protected $validationMessages   = [];
-    protected $skipValidation       = false;
-    protected $cleanValidationRules = true;
+    public function treatNull($resultArray){
+        $cleanArray = [];
+        foreach($resultArray as $keyArr => $valueArr){
+            foreach($valueArr as $key => $value) {
+                if($value == null){
+                    $valueArr[$key] = "NULO";
+                    $cleanArray = $valueArr;
+                }
+            }
+        }
 
-    // Callbacks
-    protected $allowCallbacks = true;
-    protected $beforeInsert   = [];
-    protected $afterInsert    = [];
-    protected $beforeUpdate   = [];
-    protected $afterUpdate    = [];
-    protected $beforeFind     = [];
-    protected $afterFind      = [];
-    protected $beforeDelete   = [];
-    protected $afterDelete    = [];
-
-    public function __construct()
-    {
-        $this->load->database();
+        return $cleanArray;
     }
 
     public function getAllUsuarios(){
         $result = $this->orderBy('USUARIO_ID', 'DESC')->findAll();
+        return $result;
+    }
+
+    public function getUsuarioById($id){
+        $result = $this->find($id);
         return $result;
     }
 }

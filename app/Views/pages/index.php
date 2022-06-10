@@ -43,11 +43,14 @@
     <script src="static/js/jquery.js"></script>
 
     <div id="login">
-      <img id="logo-cliente" class="w3-margin-top" src="static/imagens/logo_cliente.jpg"/>
-      <input class="w3-input w3-border w3-margin-top" type="text" placeholder="Usuário">
-      <input class="w3-input w3-border w3-margin-top" type="password" placeholder="Senha">
-      <button class="w3-button w3-theme w3-margin-top w3-block">Logar</button>
-      
+      <?php echo form_open('login/auth'); ?>
+        <img id="logo-cliente" class="w3-margin-top" src="static/imagens/logo_cliente.jpg"/>
+        <i class="fa fa-home w3-large"></i>
+        <p>Insira seu usuario e senha:</p>
+        <input class="w3-input w3-border w3-margin-top" name="usuario" id="usuario" type="text" placeholder="Usuário">
+        <input class="w3-input w3-border w3-margin-top" name="senha" id="senha" type="password" placeholder="Senha">
+        <input type="submit" class="w3-button w3-theme w3-margin-top w3-block" value="Logar"></button>
+      <?php echo form_close(); ?>
       <a href="http://www.santri.com.br">
         <img id="logo-santri" class="w3-right w3-margin-top" src="static/imagens/logo_santri.svg"/>
       </a>

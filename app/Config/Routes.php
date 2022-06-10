@@ -35,13 +35,12 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-//$routes->get('/', 'Home::index');
-$routes->get('/', 'Home::index');
-$routes->get('cadastro_usuarios', 'Cadastra::index');
+$routes->get('login', 'Home::index');
+$routes->post('login/auth', 'Home::auth');
 $routes->get('pesquisa_usuarios', 'Pesquisa::index');
-//$route->get('/pesquisa_usuarios', 'Pesquisa::index');
-//$route->get('(:any)', 'Cadastra::index');
-//$routes->get('(:any)', 'Pages::view/$1');
+$routes->get('pesquisa_usuarios/delete/(:num)', 'Pesquisa::delete/$1');
+$routes->get('cadastro_usuarios', 'Cadastra::index');
+$routes->post('cadastro_usuarios/store', 'Cadastra::store');
 
 
 /*
