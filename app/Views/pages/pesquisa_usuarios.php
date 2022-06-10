@@ -7,16 +7,16 @@
 
   <title>santri</title>
 
-  <link rel="stylesheet" href="/static/css/w3.css">
-  <link rel="stylesheet" href="/static/css/santri.css">
-  <link rel="stylesheet" href="/static/css/toastr.css">
+  <link rel="stylesheet" href="<?= base_url('/static/css') ?>/w3.css">
+  <link rel="stylesheet" href="<?= base_url('/static/css') ?>/santri.css">
+  <link rel="stylesheet" href="<?= base_url('/static/css') ?>/toastr.css">
 
-  <link rel="stylesheet" href="/static/css-awesome/brands.css">
-  <link rel="stylesheet" href="/static/css-awesome/fontawesome.css">
-  <link rel="stylesheet" href="/static/css-awesome/regular.css">
-  <link rel="stylesheet" href="/static/css-awesome/solid.css">
-  <link rel="stylesheet" href="/static/css-awesome/svg-with-js.css">
-  <link rel="stylesheet" href="/static/css-awesome/v4-shims.css">
+  <link rel="stylesheet" href="<?= base_url('/static/css-awesome') ?>/brands.css">
+  <link rel="stylesheet" href="<?= base_url('/static/css-awesome') ?>/fontawesome.css">
+  <link rel="stylesheet" href="<?= base_url('/static/css-awesome') ?>/regular.css">
+  <link rel="stylesheet" href="<?= base_url('/static/css-awesome') ?>/solid.css">
+  <link rel="stylesheet" href="<?= base_url('/static/css-awesome') ?>/svg-with-js.css">
+  <link rel="stylesheet" href="<?= base_url('/static/css-awesome') ?>/v4-shims.css">
 
   <style>
     table {
@@ -36,10 +36,42 @@
     }
 
     .wrapper {
-    max-width: 95%;
-    margin: auto;
-    margin-top: 5%;
-  }
+      max-width: 95%;
+      margin: auto;
+      margin-top: 5%;
+    }
+
+    .pagination::before {
+      content:"<<";
+      margin-top: 8px;
+      margin-right: 10px;
+    }
+
+    .pagination::after {
+      content:">>";
+      margin-top: 8px;
+      margin-left: 10px;
+    }
+    .pagination {
+      display: flex;
+      list-style-type: none;
+    }
+
+    .pagination a {
+      color: black;
+      float: left;
+      padding: 8px 16px;
+      text-decoration: none;
+    }
+
+    li.active {
+      background-color: #9c1d1c;
+      color: white;
+    }
+
+    .pagination a:hover:not(.active) {
+      background-color: #ddd;
+    }
   </style>
 
 </head>
@@ -48,9 +80,9 @@
   <script src="static/js/jquery.js"></script>
   <div class="wrapper">
     <div id="lista_usuarios" class="w3-margin w3-container w3-card">
-      <input class="w3-input w3-border w3-margin-top" id="myInput"type="text" placeholder="Nome">
+      <input class="w3-input w3-border w3-margin-top" id="myInput" type="text" placeholder="Nome">
       <button class="w3-button w3-theme w3-margin-top" onclick="myFunction()">Buscar</button>
-      <?php echo anchor('cadastro_usuarios/','Cadastrar novo usuário', 'class="w3-button w3-theme w3-margin-top w3-right"'); ?>
+      <?php echo anchor('cadastro_usuarios/', 'Cadastrar novo usuário', 'class="w3-button w3-theme w3-margin-top w3-right"'); ?>
       <table id="myTable">
         <thead>
           <tr>
@@ -85,7 +117,7 @@
             -->
         </tbody>
       </table>
-      <?php echo $pager->simpleLinks(); ?>
+      <?php echo $pager->links(); ?>
     </div>
   </div>
 

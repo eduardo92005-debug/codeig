@@ -22,7 +22,7 @@ class Pesquisa extends BaseController
 
         //Caso esteja logado,  obtem os usuarios do banco, usando paginacao
         if ($this->auth->is_usuario_logged()) {
-            $fetchUsuarios = $this->usuarioModel->paginate(10);
+            $fetchUsuarios = $this->usuarioModel->paginate(3);
             return view(
                 'pages/pesquisa_usuarios.php',
                 [

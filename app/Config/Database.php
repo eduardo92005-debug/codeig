@@ -31,7 +31,7 @@ class Database extends Config
      * @var array
      */
     public $default = [
-        'DSN'      => "mysqli://root:@127.0.0.1:3307/db_santri?serverVersion=10.4.24-MariaDB&charset=utf8mb4",
+        'DSN'      => "mysqli://root:@127.0.0.1:3306/db_santri?serverVersion=10.4.24-MariaDB&charset=utf8mb4",
         'hostname' => 'localhost',
         'username' => 'root',
         'password' => '',
@@ -47,7 +47,7 @@ class Database extends Config
         'compress' => false,
         'strictOn' => false,
         'failover' => [],
-        'port'     => 3307,
+        'port'     => 3306,
     ];
 
     /**

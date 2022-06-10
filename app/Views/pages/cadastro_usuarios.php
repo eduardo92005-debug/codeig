@@ -7,16 +7,16 @@
 
   <title>santri</title>
 
-  <link rel="stylesheet" href="static/css/w3.css">
-  <link rel="stylesheet" href="static/css/santri.css">
-  <link rel="stylesheet" href="static/css/toastr.css">
+  <link rel="stylesheet" href="<?= base_url('/static/css')?>/w3.css">
+  <link rel="stylesheet" href="<?= base_url('/static/css')?>/santri.css">
+  <link rel="stylesheet" href="<?= base_url('/static/css')?>/toastr.css">
 
-  <link rel="stylesheet" href="static/css-awesome/brands.css">
-  <link rel="stylesheet" href="static/css-awesome/fontawesome.css">
-  <link rel="stylesheet" href="static/css-awesome/regular.css">
-  <link rel="stylesheet" href="static/css-awesome/solid.css">
-  <link rel="stylesheet" href="static/css-awesome/svg-with-js.css">
-  <link rel="stylesheet" href="static/css-awesome/v4-shims.css">
+  <link rel="stylesheet" href="<?= base_url('/static/css-awesome')?>/brands.css">
+  <link rel="stylesheet" href="<?= base_url('/static/css-awesome')?>/fontawesome.css">
+  <link rel="stylesheet" href="<?= base_url('/static/css-awesome')?>/regular.css">
+  <link rel="stylesheet" href="<?= base_url('/static/css-awesome')?>/solid.css">
+  <link rel="stylesheet" href="<?= base_url('/static/css-awesome')?>/svg-with-js.css">
+  <link rel="stylesheet" href="<?= base_url('/static/css-awesome')?>/v4-shims.css">
 
 </head>
 <style>
