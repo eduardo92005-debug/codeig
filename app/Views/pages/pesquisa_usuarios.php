@@ -100,7 +100,7 @@
               <td><?= $usuario['ATIVO'] ?></td>
               <td>
                 <?php echo anchor('pesquisa_usuarios/delete/' . $usuario['USUARIO_ID'], '<i class="fas fa-user-times"></i>', 'class="w3-button w3-theme w3-margin-top"'); ?>
-                <?php echo anchor('pesquisa_usuarios/edit' . $usuario['USUARIO_ID'], '<i class="fas fa-edit"></i>', 'class="w3-button w3-theme w3-margin-top"'); ?>
+                <?php echo anchor('pesquisa_usuarios/edit/' . $usuario['USUARIO_ID'], '<i class="fas fa-edit"></i>', 'class="w3-button w3-theme w3-margin-top"'); ?>
               </td>
             </tr>
           <?php endforeach; ?>
